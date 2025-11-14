@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Portal - SHAHID BULBUL GOVT. COLLEGE, PABNA</title>
+
+    <style>
+        /* Global */
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom right, #e8f0ff, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 480px;
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            animation: fadeIn 0.7s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);} 
+            to {opacity: 1; transform: translateY(0);} 
+        }
+
+        .logo-area {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-area img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #003b80;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        p.subtext {
+            text-align: center;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            color: #003b80;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            background: #f5f8ff;
+            border: 1px solid #c7d4eb;
+            font-size: 15px;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #003b80;
+            box-shadow: 0 0 4px rgba(0, 59, 128, 0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 30px;
+            background: #003b80;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #002e66;
+        }
+
+        /* Loader */
+        #loader {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .spinner {
+            width: 35px;
+            height: 35px;
+            border: 4px solid #d0d8ea;
+            border-top: 4px solid #003b80;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="logo-area">
+            <img src="logo.png" alt="Logo" />
+            <h2>SHAHID BULBUL GOVT. COLLEGE, PABNA</h2>
+            <p class="subtext">WEB BASED RESULT PUBLICATION SYSTEM</p>
+        </div>
+
+        <label>Exam Level</label>
+        <select id="examLevel">
+            <option value="" disabled selected>Select</option>
+            <option value="HSC">HSC</option>
+        </select>
+
+        <label>Department</label>
+        <select id="department">
+            <option value="" disabled selected>Select</option>
+            <option value="Science">Science</option>
+            <option value="Arts">Arts</option>
+            <option value="Commerce">Commerce</option>
+        </select>
+
+        <label>Session</label>
+        <select id="session">
+            <option value="" disabled selected>Select</option>
+            <option value="2024-25">2024-25</option>
+            <option value="2025-26">2025-26</option>
+        </select>
+
+        <label>Exam Name</label>
+        <select id="examName">
+            <option value="" disabled selected>Select</option>
+            <option value="PreTest">HSC Pre-Test (2nd Year HSC)</option>
+            <option value="YearFinal">Year Final Exam (1st Year HSC)</option>
+        </select>
+
+        <label>Class Roll</label>
+        <input type="text" id="roll" placeholder="Enter Class Roll" />
+
+        <label>PIN Code</label>
+        <input type="password" id="pin" placeholder="Enter PIN Code" />
+
+        <button onclick="checkResult()">Submit</button>
+
+        <div id="loader">
+            <div class="spinner"></div>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+<script>
+function checkResult() {
+    let roll = document.getElementById("roll").value.trim();
+    let pin = document.getElementById("pin").value.trim();
+    let examLevel = document.getElementById("examLevel").value;
+    let department = document.getElementById("department").value;
+    let session = document.getElementById("session").value;
+    let examName = document.getElementById("examName").value;
+
+    document.getElementById("loader").style.display = "block";
+
+    setTimeout(() => {
+        if (examLevel === "HSC" && department === "Science" && session === "2024-25" && examName === "PreTest") {
+
+            if (roll === "1202425010347" && pin === "4979") {
+                window.location.href = "https://drive.google.com/file/d/161uM-Ni-yg-MYbGvCYqvzeSpvmNOC1I9/view?usp=sharing";
+                return;
+            }
+            if (roll === "1202425010348" && pin === "6234") {
+                window.location.href = "https://drive.google.com/file/d/1xEK-rlTwg-4431UCexsFNREH9cuMpBuD/view?usp=sharing";
+                return;
+            }
+            if (roll === "1202425010349" && pin === "0755") {
+                window.location.href = "https://drive.google.com/file/d/198aepfQPt5yHzNCpDkDjnrgdt6SL01Wp/view?usp=sharing";
+                return;
+            }
+            if (roll === "1202425010353" && pin === "9439") {
+                window.location.href = "https://drive.google.com/file/d/1OU8F75lk3DPuLZoZbG9yFd751Wdr1IcC/view?usp=sharing";
+                return;
+            }
+        }
+
+        document.getElementById("loader").style.display = "none";
+        alert("Invalid information. Please re-check your inputs.");
+    }, 1000);
+}
+</script>
+
+</body>
+</html>
